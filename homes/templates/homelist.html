@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <style>
+            body{
+                background-color: bisque;
+            }
+            .all{
+                margin-left: 150px;
+                border: 2px solid green;
+                background-color: aquamarine;
+                width: 600px;
+                margin-top: 30px;
+                border-radius: 13px;
+            }
+            #ima{
+                display: flex;
+                flex-direction:row;
+                gap: 10px;
+                width:500px ;
+            }
+            #im1{
+                width: 200px;
+                border: 1px solid black;
+                border-radius: 13px;
+               
+            }
+            #im2{
+                width: 200px;
+                border: 1px solid black;
+                border-radius: 13px;
+
+            }
+
+            #info{
+                width: 500px;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                flex-direction: row;
+            }
+            .p{
+                background-color: blueviolet;
+            }
+            #all1{
+                margin-top: 20px;
+                background-color: darkcyan;
+                box-shadow:  0px 4px 8px rgba(83, 72, 82, 0.7);
+            }
+            h2{
+                margin-left: 100px;
+                width:700px;;
+                position: fixed;
+                text-transform:capitalize;
+                text-align: center;
+                margin-top: 30px;
+                height: 50px;
+                box-shadow:  0px 4px 8px rgba(240, 10, 182, 0.7);
+                background-color: rgb(233, 232, 211);
+
+            }
+            a{
+                width: 100px;
+                background-color: rgb(117, 140, 160);
+
+            }
+            
+            
+
+
+            
+            
+        </style>
+        
+           
+
+
+    </head>
+    <body>
+        <h2>gojeye  
+            center of market
+        </h2>
+        
+        <div class="all">
+            {% for home in homes %}
+                <div id="all1">
+                    <div id="ima">
+                        <img  id="im1" src="{{home.bf_image.url}}">
+                        <img id="im2" src="{{home.bac_image.url}}">
+                    </div>
+                 
+                    <div id="info">
+                        <p style="background-color: aqua;text-align: center;text-transform: capitalize;font-size:large;width: 100px; border-radius: 13px; box-shadow:  0px 4px 8px rgba(83, 72, 82, 0.7);background-color: rgb(177, 147, 147);">location:<p class="p" style="font-size: x-large;background-color:rgb(190, 190, 163);"> {{home.location}}</p></p>
+                        <p style="background-color: aqua;text-align: center;text-transform: capitalize;font-size:large;width: 100px;box-shadow:  0px 4px 8px rgba(83, 72, 82, 0.7);width: 100px;border-radius: 13px;background-color: rgb(177, 147, 147);">price:$<p class="p" style="font-size: x-large;background-color:yellow;">{{home.price}}</p></p>
+                     
+                    </div>
+
+                   <div id="two">
+                     <a href="{% url 'rentercreat' %}"><button>apply</button></a>
+
+                   </div>
+
+                </div>
+
+               
+                       
+                  
+
+                    
+
+               
+               
+
+                
+               
+            {% endfor %}
+        </div>
+
+    </body>
+</html>

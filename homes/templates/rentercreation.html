@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>index</title>
+        <style>
+            form{
+                margin-left: 200px;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+               
+            }
+            input{
+                background-color:gray;
+                height: 50px;
+                
+                border-radius: 23px;
+                width:700px ;
+            }
+            label{
+                font-size: x-large;
+                background-color: azure;
+            }
+            button{
+                width: 120px;
+                height: 50px;
+                margin-left: 300px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <form method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">submmit</button>
+        </form>
+    </body>
+</html>
